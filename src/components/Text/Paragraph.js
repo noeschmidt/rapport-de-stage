@@ -2,26 +2,58 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-export default function Paragraph({ paragraph, index }) {
-  const container = useRef(index);
+export function ParagraphsContainer({ paragraphs, textSize = "text-base" }) {
+  const totalParagraphs = paragraphs.length;
+  const spacePerParagraph = 1 / totalParagraphs;
+
+  const buffer = 0.1 * spacePerParagraph;
+
+  return (
+    <div className="flex flex-col gap-4 md:gap-8 xl:gap-12 2xl:gap-16">
+      {paragraphs.map((paragraph, index) => (
+        <Paragraph
+          key={index}
+          paragraph={paragraph}
+          index={index}
+          textSize={textSize}
+          totalParagraphs={totalParagraphs}
+          spacePerParagraph={spacePerParagraph}
+          buffer={buffer}
+        />
+      ))}
+    </div>
+  );
+}
+
+function Paragraph({
+  paragraph,
+  index,
+  textSize,
+  totalParagraphs,
+  spacePerParagraph,
+  buffer,
+}) {
+  const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start 0.9", "start 0.25"],
   });
 
   const words = paragraph.split(" ");
-  const paragraphStart = index * 0.25; // 0.25 représente l'espace entre chaque paragraphe
-  const paragraphEnd = paragraphStart + 0.25;
+  const paragraphStart = index * spacePerParagraph;
+  const paragraphEnd = paragraphStart + spacePerParagraph - buffer;
+
+  const animationSpace = spacePerParagraph - buffer;
   return (
     <p
       ref={container}
-      className="flex text-lg md:text-4xl max-w-[1000px] p-0 flex-wrap"
+      className={`flex ${textSize} text-left justify-start max-w-screen-2xl p-0 flex-wrap`}
     >
       {words.map((word, i) => {
-        const start = paragraphStart + (i / words.length) * 0.25;
-        const end = paragraphStart + ((i + 1) / words.length) * 0.25;
+        const wordStart = paragraphStart + (i / words.length) * animationSpace;
+        const wordEnd = wordStart + animationSpace / words.length;
         return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
+          <Word key={i} progress={scrollYProgress} range={[wordStart, wordEnd]}>
             {word}
           </Word>
         );
@@ -32,6 +64,7 @@ export default function Paragraph({ paragraph, index }) {
 function Word({ children, progress, range }) {
   const amount = range[1] - range[0];
   const step = amount / children.length;
+
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="relative mr-1 md:mr-3 mt-0 md:mt-3">

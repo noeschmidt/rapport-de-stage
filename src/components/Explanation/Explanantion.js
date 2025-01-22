@@ -1,5 +1,5 @@
 import Card from "../ColoredCards/Card";
-import Paragraph from "../Text/Paragraph";
+import { ParagraphsContainer } from "../Text/Paragraph";
 export default function Explanation() {
   const cards = [
     {
@@ -140,28 +140,19 @@ export default function Explanation() {
       paddingY: "-[24px]",
     },
   ];
-  const projectDescription = {
-    description: `Première chose, un courtier en assurance touche de l'argent en vous vendant une assurance. Il va toucher une commission différentes en fonction de l'assureur, c'est pour ça que certains courtiers ont tendance à vouloir vous vendre des produits dont vous n'avez aucune utilité mais qui s'ajoute au prix total.
-
-En Suisse, vous connaissez peut-être Comparis, pour comparer vos assurances. En fait, Comparis peut être perçu comme un énorme courtier, il vous propose de conclure des assurances, qui selon lui sont avantageuses, et touche une commission sur chaque vente.
-
-Le soucis avec Comparis, c'est qu'il n'est pas assez précis. Il vous pose 1 question et directement vous propose des produits.
-
-Sauf que c'est bien plus complexe, pour savoir si un produit est vraiment adéquat, il faut poser plus de questions pour découvrir vraiment les besoins d'une personne.
-
-Par exemple, une personne qui souhaite couvrir des prestations lié à ses dents, va vouloir une assurance dentaire. Mais chez beaucoup d'assureur, il y a des variantes avec des taux de remboursements plus ou moins élevés, et des primes à payer différentes aussi. Ce qui rends le choix difficile, si la personne a 1 seul rendez-vous par année, on ne va pas lui proposer la couverture la plus haute.
-
-Un des soucis principal est que forcément il est légèrement biaisé. S'il peut toucher 5 fois plus avec un certain assureur, il a tout intérêt à vous recommender cet assureur.
-
-Notre mission avec Zoodle (Le nom de l'app) était de comparer tous les produits d'assurances complémentaires en fonction des besoins de chaque personne, pour déterminer quel(s) produit(s) est adéquat.
-
-Pas facile, puisque qu'il existe des centaines de produits, tous sont différents, tous ont un prix différent, en fonction de l'âge, du sexe, d'où-t-on réside, et d'autres critères.
-
-Pour les prix, Comparis a accès à une API pour chaque assureur, sauf que nous non. Ce qui fait que nous devons soit utiliser des listes de prix en Excel, soit faire du scraping sur le site de chaque assureur.`,
-  };
+  const descriptions = [
+    "La première chose à savoir, c’est qu’un courtier en assurance gagne de l’argent en vous vendant une assurance. Il touche une commission différente selon l’assureur. C’est pour cela que certains courtiers ont tendance à vouloir vous vendre des produits dont vous n’avez pas réellement besoin, mais qui augmentent le prix total de votre couverture.",
+    "En Suisse, vous connaissez peut-être Comparis, une plateforme permettant de comparer les assurances. En réalité, Comparis peut être vu comme un grand courtier. Il vous propose de souscrire à des assurances qu’il juge avantageuses et perçoit une commission sur chaque vente réalisée.",
+    "Le problème avec Comparis, c’est qu’il manque de précision. Il vous pose une seule question, puis vous suggère directement des produits. Or, la réalité est bien plus complexe. Pour déterminer si un produit est vraiment adapté, il faudrait poser davantage de questions afin de cerner précisément les besoins d’une personne.",
+    "Prenons un exemple : une personne qui souhaite couvrir ses frais dentaires pourrait envisager une assurance dentaire. Cependant, chez de nombreux assureurs, il existe plusieurs variantes avec des taux de remboursement différents et des primes plus ou moins élevées. Le choix peut vite devenir compliqué. Si cette personne n’a qu’un rendez-vous annuel chez le dentiste, il serait inutile de lui proposer la couverture la plus élevée.",
+    "Un autre problème majeur est que ce type de service est souvent biaisé. Si un courtier peut toucher cinq fois plus de commission avec un certain assureur, il sera naturellement tenté de recommander cet assureur, même si ce n’est pas le meilleur choix pour vous.",
+    "Notre mission avec Zoodle (le nom de l’application) était de comparer tous les produits d’assurances complémentaires en fonction des besoins spécifiques de chaque personne, afin de déterminer le ou les produits les plus adéquats.",
+    "C’est un défi de taille, car il existe des centaines de produits différents, chacun ayant des prix qui varient en fonction de l’âge, du sexe, du lieu de résidence et d’autres critères.",
+    "Concernant les prix, Comparis a accès à une API pour chaque assureur. De notre côté, ce n’est pas le cas. Nous devons donc utiliser soit des listes de prix au format Excel, soit recourir à du scraping sur les sites des assureurs pour obtenir les informations nécessaires.",
+  ];
   return (
-    <main className="textured-background size-full text-base-softWhite py-8">
-      <div className="max-width-custom px-8 flex flex-col gap-8 justify-center size-full mx-auto">
+    <main className="textured-background size-full text-base-softWhite py-12 md:py-32 z-20 relative">
+      <div className="max-width-custom px-8 flex flex-col gap-16 justify-center size-full mx-auto">
         <h4 className="text-base-softWhite text-4xl text-left font-semibold">
           Courte explication des assurances en Suisse.
         </h4>
@@ -182,11 +173,15 @@ Pour les prix, Comparis a accès à une API pour chaque assureur, sauf que nous 
             />
           ))}
         </div>
-        <h4 className="text-base-softWhite text-4xl text-left font-semibold">
-          Description du projet
-        </h4>
-
-        <Paragraph paragraph={projectDescription.description} index={0} />
+        <div className="flex flex-col gap-4">
+          <h4 className="text-base-softWhite text-4xl text-left font-semibold">
+            Description du projet
+          </h4>
+          <ParagraphsContainer
+            paragraphs={descriptions}
+            textSize="text-xl md:text-4xl lg:text-5xl"
+          />
+        </div>
       </div>
     </main>
   );

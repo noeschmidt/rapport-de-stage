@@ -7,14 +7,31 @@ h1 {
 }
 
 h2 {
-  @apply text-6xl md:text-7xl lg:text-8xl font-semibold;
+  @apply text-4xl md:text-7xl lg:text-8xl font-semibold;
 }
 
 .textured-background {
-  @apply bg-cover;
+  @apply bg-cover bg-fixed;
   background-image: url("/background.png");
+}
+
+.white-background {
+  @apply bg-cover bg-fixed;
+  background-image: url("/white-background.png");
 }
 
 .max-width-custom {
   @apply max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl;
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
 }

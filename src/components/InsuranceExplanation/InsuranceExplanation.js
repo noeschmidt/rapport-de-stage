@@ -21,7 +21,7 @@ export default function InsuranceExplanation() {
         <h2>Assurances complémentaires</h2>
         <ParagraphsContainer
           paragraphs={paragraphs}
-          textSize="text-lg md:text-4xl lg:text-5xl"
+          textSize="text-xl md:text-2xl lg:text-3xl"
         />
       </div>
     </main>

@@ -1,6 +1,6 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import React, { useRef, useMemo, memo } from "react";
 
 export function ParagraphsContainer({ paragraphs, textSize = "text-base" }) {
   const totalParagraphs = paragraphs.length;
@@ -34,52 +34,67 @@ function Paragraph({
   buffer,
 }) {
   const container = useRef(null);
+
+  const words = useMemo(() => paragraph.split(" "), [paragraph]);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start 0.9", "start 0.25"],
   });
 
-  const words = paragraph.split(" ");
-  const paragraphStart = index * spacePerParagraph;
-  const paragraphEnd = paragraphStart + spacePerParagraph - buffer;
+  // Mémoriser les calculs d'animation
+  const animationParams = useMemo(() => {
+    const paragraphStart = index * spacePerParagraph;
+    const paragraphEnd = paragraphStart + spacePerParagraph - buffer;
+    const animationSpace = spacePerParagraph - buffer;
+    return { paragraphStart, animationSpace };
+  }, [index, spacePerParagraph, buffer]);
 
-  const animationSpace = spacePerParagraph - buffer;
   return (
     <p
       ref={container}
       className={`flex ${textSize} text-left justify-start max-w-screen-2xl p-0 flex-wrap`}
     >
-      {words.map((word, i) => {
-        const wordStart = paragraphStart + (i / words.length) * animationSpace;
-        const wordEnd = wordStart + animationSpace / words.length;
-        return (
-          <Word key={i} progress={scrollYProgress} range={[wordStart, wordEnd]}>
-            {word}
-          </Word>
-        );
-      })}
+      {words.map((word, i) => (
+        <Word
+          key={i}
+          word={word}
+          progress={scrollYProgress}
+          wordIndex={i}
+          totalWords={words.length}
+          animationParams={animationParams}
+        />
+      ))}
     </p>
   );
 }
-function Word({ children, progress, range }) {
-  const amount = range[1] - range[0];
-  const step = amount / children.length;
+// Optimiser Word avec memo
+const Word = memo(function Word({
+  word,
+  progress,
+  wordIndex,
+  totalWords,
+  animationParams,
+}) {
+  const { paragraphStart, animationSpace } = animationParams;
+
+  // Calculer la plage une seule fois par mot
+  const range = useMemo(() => {
+    const wordStart =
+      paragraphStart + (wordIndex / totalWords) * animationSpace;
+    const wordEnd = wordStart + animationSpace / totalWords;
+    return [wordStart, wordEnd];
+  }, [paragraphStart, wordIndex, totalWords, animationSpace]);
 
   const opacity = useTransform(progress, range, [0, 1]);
+
   return (
     <span className="relative mr-1 md:mr-3 mt-0 md:mt-3">
-      {children.split("").map((char, i) => {
-        const start = range[0] + i * step;
-        const end = range[0] + (i + 1) * step;
-        return (
-          <Char key={`c_${i}`} progress={progress} range={[start, end]}>
-            {char}
-          </Char>
-        );
-      })}
+      <span className="absolute opacity-20">{word}</span>
+      <motion.span style={{ opacity }}>{word}</motion.span>
     </span>
   );
-}
+});
 
 const Char = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);

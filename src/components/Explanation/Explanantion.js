@@ -179,7 +179,7 @@ export default function Explanation() {
           </h4>
           <ParagraphsContainer
             paragraphs={descriptions}
-            textSize="text-xl md:text-4xl lg:text-5xl"
+            textSize="text-xl md:text-2xl lg:text-3xl"
           />
         </div>
       </div>

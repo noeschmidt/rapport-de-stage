@@ -188,7 +188,7 @@ export default function Personal() {
           </h4>
           <ParagraphsContainer
             paragraphs={softSkills}
-            textSize="text-xl md:text-4xl lg:text-5xl"
+            textSize="text-xl md:text-2xl lg:text-3xls"
           />
         </div>
         <div className="flex flex-col gap-4 mt-8 md:mt-16">
@@ -197,7 +197,7 @@ export default function Personal() {
           </h4>
           <ParagraphsContainer
             paragraphs={projectsPro}
-            textSize="text-xl md:text-4xl lg:text-5xl"
+            textSize="text-xl md:text-2xl lg:text-3xl"
           />
         </div>
       </div>

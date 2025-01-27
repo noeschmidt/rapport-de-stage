@@ -12,23 +12,26 @@ export default function Projects() {
     {
       title: "Tableau des produits d’assurances",
       description:
-        "J’ai crée un tableau, au début de mon stage, pour répertorier chaque produits d’assurances complémentaires. Pour chaque produit, j’enregistrais, en fonction de différents critères, les remboursement proposés.",
+        "J’ai crée un tableau, au début de mon stage, pour répertorier chaque produits d’assurances complémentaires.",
       src: "/tableau-comparateur.png",
       color: green,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Initialisation et configuration d’Infomaniak",
       description:
-        "Avant de faire le design, je souhaitais mettre en place les fondations du projet. J’ai donc crée un serveur cloud managé à travers Infomaniak, avec beaucoup de bugs et de problèmes mais grâce à leur support je m’en suis sorti.",
+        "Avant de faire le design, je souhaitais mettre en place les fondations du projet.",
       src: "/infomaniak.png",
       color: indigo,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Mise en place du Figma",
       description:
-        "J’utilise un peu Figma comme un second cerveau. Je fais quasiment tout dessus, j’ai des pages différents pour chaque partie du projet, design, base de donnée, logique, scraping, etc...",
+        "J'ai des pages différents pour chaque partie du projet, design, base de donnée, logique, scraping, etc...",
       src: "/figma.png",
       color: orange,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Initialisation du projet",
@@ -36,27 +39,30 @@ export default function Projects() {
         "J’ai commencé la configuration du projet avec Next.js et j’ai mis en place la connexion avec la base de donnée.",
       src: "/code-project.png",
       color: green,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Remplissage des pricings",
-      description:
-        "Les prix des assurances sont complexes, ils peuvent varier en fonction de l’âge, du sexe, de la localité où l’on habite et si on souhaite couvrir la maladie et l’accident ou seulement la maladie. J’ai remplis des Excels manuellement avec des listes de prix, pour chaque produit d’assurance.",
+      description: "J'ai rempli le tableau des prix sur Excel.",
       src: "/pricings.png",
       color: indigo,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Création de script",
       description:
-        "Pour importer les prix dans la base de donnée, il fallait qu’il soit dans un format JSON bien précis. J’ai crée un script pour transformer les Excels en JSON en Python.",
+        "J’ai crée un script pour transformer les Excels en JSON en Python.",
       src: "/script.png",
       color: orange,
+      height: "h-96 md:h-[75vh]",
     },
     {
       title: "Tentatives de scraping",
       description:
-        "Chaque assureur a un outil en ligne qui permet de voir chaque produit d’assurance et le prix associé. J’ai voulu, pour me simplifier la vie, faire du scraping. Mauvaise idée, j’ai passé à essayer de créer des script de scraping foireux, qui ont fonctionné que sur un ou deux assureur. Je me suis rendu compte que faire du bon scraping ça prends un temps fou et qu’il faut des compétences que je n’avais pas forcément développé.",
+        "J'ai essayé de scraper les comparateurs des assureurs en ligne.",
       src: "/helsana-website.png",
       color: green,
+      height: "h-96 md:h-[75vh]",
     },
   ];
   return (

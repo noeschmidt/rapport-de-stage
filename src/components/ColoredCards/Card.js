@@ -15,7 +15,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`px-8 py-12 text-base-softWhite flex flex-col gap-4 place-items-center justify-center text-center group`}
+      className={`px-8 py-8 md:py-12 text-base-softWhite flex flex-col gap-4 place-items-center justify-center text-center group`}
       style={{
         backgroundColor: color,
         borderRadius: `${roundedTopLeft} ${roundedTopRight} ${roundedBotRight} ${roundedBotLeft}`,

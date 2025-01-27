@@ -8,6 +8,14 @@ export function ParagraphsContainer({ paragraphs, textSize = "text-base" }) {
 
   const buffer = 0.1 * spacePerParagraph;
 
+  const memoizedValues = useMemo(
+    () => ({
+      spacePerParagraph: 1 / totalParagraphs,
+      buffer: 0.1 * (1 / totalParagraphs),
+    }),
+    [totalParagraphs]
+  );
+
   return (
     <div className="flex flex-col gap-4 md:gap-8 xl:gap-12 2xl:gap-16">
       {paragraphs.map((paragraph, index) => (
@@ -95,20 +103,3 @@ const Word = memo(function Word({
     </span>
   );
 });
-
-const Char = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0, 1]);
-
-  return (
-    <span>
-      <span
-        className="absolute opacity-20
-      "
-      >
-        {children}
-      </span>
-
-      <motion.span style={{ opacity: opacity }}>{children}</motion.span>
-    </span>
-  );
-};

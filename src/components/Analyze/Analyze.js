@@ -7,6 +7,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#E7582E",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Points positifs",
@@ -14,6 +15,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#0D9488",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Liberté du choix des technologies",
@@ -21,6 +23,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#4F46E5",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Projet ambitieux et avec une vraie chance de réussite",
@@ -28,6 +31,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#E7582E",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Bureaux agréables et proche de la ville",
@@ -35,6 +39,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#0D9488",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Un boss amical et dans le même esprit que moi",
@@ -42,6 +47,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#4F46E5",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Points d’amélioration",
@@ -49,6 +55,7 @@ export default function Analyze() {
       showDescription: false,
       color: "#E7582E",
       textAlign: "text-center",
+      height: "h-32 md:h-40",
     },
     {
       title: "Organisation",
@@ -58,6 +65,7 @@ export default function Analyze() {
         "Je pense que planifier plus en profondeur le projet pour savoir ce qu’il faut faire chaque semaine, m’aurait permis d’être mieux organisé!",
       color: "#0D9488",
       textAlign: "text-center",
+      height: "h-48",
     },
     {
       title: "Equipe",
@@ -67,6 +75,7 @@ export default function Analyze() {
         "Avoir une équipe (même petite), pour pouvoir m’aider et me conseiller lors de la résolution de problèmes.",
       color: "#4F46E5",
       textAlign: "text-center",
+      height: "h-48",
     },
     {
       title: "Suivi",
@@ -76,6 +85,7 @@ export default function Analyze() {
         "En me découvrant durant ce stage, je me suis rendu compte que je travaillais mieux avec des deadlines précises et des tâches à régler.",
       color: "#E7582E",
       textAlign: "text-center",
+      height: "h-48",
     },
     {
       title: "Leçons apprises",

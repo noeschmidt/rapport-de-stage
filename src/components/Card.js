@@ -15,20 +15,47 @@ export default function Card({
   showSVGBulletPoint = false,
   bulletPoints,
   titleClassNames,
+  showProgression = false,
+  progression = 0,
 }) {
   return (
     <div
       className={`h-screen flex place-items-center justify-center sticky top-0 px-4 md:px-0 ${textAlign}`}
     >
       <div
-        className={`flex flex-col gap-4 relative ${height} w-full p-6 md:p-12 origin-top rounded-lg justify-center `}
-        style={{ backgroundColor: color, top: `calc(-5vh + ${i * 25}px)` }}
+        className={`flex flex-col gap-4 relative ${height} w-full p-6 md:p-12 origin-top rounded-lg justify-center`}
+        style={{
+          backgroundColor: color,
+          top: `calc(-5vh + ${i * 25}px)`,
+        }}
       >
-        <h2
-          className={`m-0 text-2xl md:text-4xl xl:text-6xl text-base-softWhite ${titleClassNames}`}
-        >
-          {title || "title"}
-        </h2>
+        <div className="flex flex-col gap-4 md:gap-8">
+          {showProgression && (
+            <div className="w-full h-fit flex gap-2 md:gap-8">
+              <div
+                className={`w-full h-2 md:h-4 bg-white rounded-full transition-opacity duration-300 border border-neutral-200`}
+                style={{ opacity: progression >= 25 ? 1 : 0.25 }}
+              />
+              <div
+                className={`w-full h-2 md:h-4 bg-white rounded-full transition-opacity duration-300 border border-neutral-200`}
+                style={{ opacity: progression >= 50 ? 1 : 0.25 }}
+              />
+              <div
+                className={`w-full h-2 md:h-4 bg-white rounded-full transition-opacity duration-300 border border-neutral-200`}
+                style={{ opacity: progression >= 75 ? 1 : 0.25 }}
+              />
+              <div
+                className={`w-full h-2 md:h-4 bg-white rounded-full transition-opacity duration-300 border border-neutral-200`}
+                style={{ opacity: progression >= 100 ? 1 : 0.25 }}
+              />
+            </div>
+          )}
+          <h2
+            className={`m-0 text-2xl md:text-4xl xl:text-6xl text-base-softWhite ${titleClassNames}`}
+          >
+            {title || "title"}
+          </h2>
+        </div>
         {showImage && src && (
           <div className="w-full aspect-[16/9] relative overflow-hidden rounded-lg shadow-md border border-white border-opacity-25">
             <Image fill src={src} alt={title} className="object-cover" />

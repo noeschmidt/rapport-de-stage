@@ -16,7 +16,11 @@ export default function Goals() {
       showImage: false,
       color: "#0D9488",
       textAlign: "text-left",
+      height: "h-40 md:h-72",
+
       titleClassNames: titleSize,
+      showProgression: true,
+      progression: 75,
     },
     {
       title: "Comprendre le domaine des assurances",
@@ -24,7 +28,11 @@ export default function Goals() {
       showImage: false,
       color: "#4F46E5",
       textAlign: "text-left",
+      height: "h-40 md:h-72",
+
       titleClassNames: titleSize,
+      showProgression: true,
+      progression: 90,
     },
     {
       title: "Développer ma rigueur",
@@ -34,6 +42,8 @@ export default function Goals() {
       color: "#E7582E",
       height: "h-40 md:h-72",
       titleClassNames: titleSize,
+      showProgression: true,
+      progression: 50,
     },
   ];
   return (
@@ -50,6 +60,8 @@ export default function Goals() {
             textAlign={goal.textAlign}
             height={goal.height}
             titleClassNames={goal.titleClassNames}
+            showProgression={goal.showProgression}
+            progression={goal.progression}
           />
         ))}
       </div>

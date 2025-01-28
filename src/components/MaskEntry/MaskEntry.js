@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const variants = {
   container: {
@@ -120,18 +120,47 @@ export default function StepSequence() {
       animate="animate"
       className="h-screen w-screen fixed top-0 left-0 right-0 z-10 flex justify-center place-items-center no-doc-scroll overflow-hidden scrollbar-hidden"
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <div
-          key="square-container"
-          className="flex place-items-center justify-center size-full"
+          key="squares-container"
+          className="absolute bottom-0 top-0 md:top-64 flex items-center justify-center"
         >
-          <motion.div
-            variants={variants.square}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className="absolute left-0 right-0 mx-auto bg-orange-500 size-48 rounded-3xl"
-          />
+          <div className="relative">
+            {/* Carré central */}
+            <motion.div
+              variants={variants.square}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="bg-orange-500 size-48 rounded-3xl"
+            />
+
+            {/* Carré droit */}
+            <motion.div
+              variants={variants.square2}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="absolute bg-base-softWhite size-48 rounded-3xl md:block hidden"
+              style={{
+                top: "-100%",
+                right: "-100%",
+              }}
+            />
+
+            {/* Carré gauche */}
+            <motion.div
+              variants={variants.square3}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="absolute bg-base-softWhite size-48 rounded-3xl md:block hidden"
+              style={{
+                top: "-100%",
+                left: "-100%",
+              }}
+            />
+          </div>
         </div>
 
         <motion.div
@@ -260,32 +289,6 @@ export default function StepSequence() {
             />
           </svg>
         </motion.div>
-
-        <div
-          key="square2-container"
-          className="flex place-items-center justify-center size-full invisible md:visible"
-        >
-          <motion.div
-            variants={variants.square2}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className="absolute left-96 top-96 right-0 mx-auto bg-base-softWhite size-48 rounded-3xl"
-          />
-        </div>
-
-        <div
-          key="square3-container"
-          className="flex place-items-center justify-center size-full invisible md:visible"
-        >
-          <motion.div
-            variants={variants.square3}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className="absolute left-0 right-96 top-96 mx-auto bg-base-softWhite size-48 rounded-3xl"
-          />
-        </div>
       </AnimatePresence>
     </motion.div>
   );

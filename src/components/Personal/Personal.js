@@ -154,8 +154,8 @@ export default function Personal() {
   const projectsPro = [
     "Ce stage, ainsi que mes projets personnels, m’ont permis de mieux comprendre mes aspirations professionnelles.",
     "J’aime toucher à plusieurs domaines comme le code, le design et le marketing. Cela me pousse à envisager de travailler dans une petite équipe où je pourrais contribuer à divers projets, plutôt que dans une grande entreprise où je serais assigné à une seule fonction.",
-    "Le monde des assurances, bien qu’intéressant d’un point de vue financier, ne correspond pas à mes valeurs sur le long terme. Je ne me vois pas y travailler toute ma vie.",
-    "Pour mon prochain stage, je vais chercher une opportunité dans une équipe avec des développeurs plus seniors ou au sein d’une agence. Cela me permettrait d’apprendre davantage et de travailler dans un environnement collaboratif.",
+    "J'avoue que j'ai bien apprécié découvrir le monde des assurances, je ne sais pas si je travaillairais là-dedans plus tard dans ma vie, mais en tout cas je ne me ferme aucune porte.",
+    "Pour mon prochain stage, je ne sais pas encore ce que je souhaite faire. Peut-être continuer le projet et l'améliorer grandement avec les compétences que j'aurais apprises d'ici là. Ou alors travailler avec une équipe directement pour me former avec des développeurs plus seniors.",
   ];
   return (
     <main className="textured-background size-full text-base-softWhite py-12 md:py-48 z-20 relative">

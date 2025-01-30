@@ -15,7 +15,7 @@ export default function Projects() {
         "J’ai crée un tableau, au début de mon stage, pour répertorier chaque produits d’assurances complémentaires.",
       src: "/tableau-comparateur.png",
       color: green,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Initialisation et configuration d’Infomaniak",
@@ -23,7 +23,7 @@ export default function Projects() {
         "Avant de faire le design, je souhaitais mettre en place les fondations du projet.",
       src: "/infomaniak.png",
       color: indigo,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Mise en place du Figma",
@@ -31,7 +31,7 @@ export default function Projects() {
         "J'ai des pages différents pour chaque partie du projet, design, base de donnée, logique, scraping, etc...",
       src: "/figma.png",
       color: orange,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Initialisation du projet",
@@ -39,14 +39,14 @@ export default function Projects() {
         "J’ai commencé la configuration du projet avec Next.js et j’ai mis en place la connexion avec la base de donnée.",
       src: "/code-project.png",
       color: green,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Remplissage des pricings",
       description: "J'ai rempli le tableau des prix sur Excel.",
       src: "/pricings.png",
       color: indigo,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Création de script",
@@ -54,7 +54,7 @@ export default function Projects() {
         "J’ai crée un script pour transformer les Excels en JSON en Python.",
       src: "/script.png",
       color: orange,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
     {
       title: "Tentatives de scraping",
@@ -62,7 +62,7 @@ export default function Projects() {
         "J'ai essayé de scraper les comparateurs des assureurs en ligne.",
       src: "/helsana-website.png",
       color: green,
-      height: "h-96 md:h-[75vh]",
+      height: "h-96 md:h-[70vh]",
     },
   ];
   return (

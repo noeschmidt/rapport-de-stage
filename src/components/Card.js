@@ -23,7 +23,7 @@ export default function Card({
       className={`h-screen flex place-items-center justify-center sticky top-0 px-4 md:px-0 ${textAlign}`}
     >
       <div
-        className={`flex flex-col gap-4 relative ${height} w-full p-6 md:p-12 origin-top rounded-lg justify-center`}
+        className={`flex flex-col gap-4 md:gap-8 relative ${height} w-full p-4 md:p-8 origin-top rounded-lg justify-center`}
         style={{
           backgroundColor: color,
           top: `calc(-5vh + ${i * 25}px)`,

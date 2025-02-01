@@ -142,13 +142,13 @@ export default function Explanation() {
   ];
   const descriptions = [
     "La première chose à savoir, c’est qu’un courtier en assurance gagne de l’argent en vous vendant une assurance. Il touche une commission différente selon l’assureur. C’est pour cela que certains courtiers ont tendance à vouloir vous vendre des produits dont vous n’avez pas réellement besoin, mais qui augmentent le prix total de votre couverture.",
-    "En Suisse, vous connaissez peut-être Comparis, une plateforme permettant de comparer les assurances. En réalité, Comparis peut être vu comme un grand courtier. Il vous propose de souscrire à des assurances qu’il juge avantageuses et perçoit une commission sur chaque vente réalisée.",
+    "En Suisse, vous connaissez peut-être Comparis, une plateforme permettant de comparer les assurances. En réalité, Comparis peut être vu comme un grand courtier. Il vous propose de souscrire à des assurances qu’il juge avantageuses. La FINMA essaie de les mettre comme courtier.",
     "Le problème avec Comparis, c’est qu’il manque de précision. Il vous pose une seule question, puis vous suggère directement des produits. Or, la réalité est bien plus complexe. Pour déterminer si un produit est vraiment adapté, il faudrait poser davantage de questions afin de cerner précisément les besoins d’une personne.",
     "Prenons un exemple : une personne qui souhaite couvrir ses frais dentaires pourrait envisager une assurance dentaire. Cependant, chez de nombreux assureurs, il existe plusieurs variantes avec des taux de remboursement différents et des primes plus ou moins élevées. Le choix peut vite devenir compliqué. Si cette personne n’a qu’un rendez-vous annuel chez le dentiste, il serait inutile de lui proposer la couverture la plus élevée.",
     "Un autre problème majeur est que ce type de service est souvent biaisé. Si un courtier peut toucher cinq fois plus de commission avec un certain assureur, il sera naturellement tenté de recommander cet assureur, même si ce n’est pas le meilleur choix pour vous.",
     "Notre mission avec Zoodle (le nom de l’application) était de comparer tous les produits d’assurances complémentaires en fonction des besoins spécifiques de chaque personne, afin de déterminer le ou les produits les plus adéquats.",
     "C’est un défi de taille, car il existe des centaines de produits différents, chacun ayant des prix qui varient en fonction de l’âge, du sexe, du lieu de résidence et d’autres critères.",
-    "Concernant les prix, Comparis a accès à une API pour chaque assureur. De notre côté, ce n’est pas le cas. Nous devons donc utiliser soit des listes de prix au format Excel, soit recourir à du scraping sur les sites des assureurs pour obtenir les informations nécessaires.",
+    "Concernant les prix, Comparis semble avoir accès à une API pour certains assureurs. De notre côté, ce n’est pas le cas. Nous devons donc utiliser soit des listes de prix au format Excel, soit recourir à du scraping sur les sites des assureurs pour obtenir les informations nécessaires.",
   ];
   return (
     <main className="textured-background size-full text-base-softWhite py-12 md:py-32 z-20 relative">

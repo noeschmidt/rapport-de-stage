@@ -1,7 +1,7 @@
 import { ParagraphsContainer } from "../Text/Paragraph";
 export default function About() {
   const abouts = [
-    "Mérillat Consulting courtage en assurances, placement et conseils financiers.",
+    "Mérillat Consulting courtage en assurances et conseils financiers.",
 
     "Mon role a été développeur full-stack & designer, ayant pour mission de développer une web app de comparaison d’assurances suisses.",
 
